@@ -1,10 +1,8 @@
 <?php
-//NOTE: if MySQL is not working in xampp, run task manager as admin and end mysql
 
-declare(strict_types = 1);
-
+//localhost, user and password all use the default MySQL values I believe
 $host = "localhost"; //hostname
-$db = "week_two"; //database name
+$db = "Lab1"; //database name. i made this Lab1 database here: http://localhost/phpmyadmin/
 $user = "root"; //username
 $password = ""; //password
 
@@ -16,7 +14,7 @@ try
 {
     $pdo = new PDO ($dsn, $user, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION); //exception handling
-    echo "<p>YAY CONNECTED!</p>";
+    echo "<p>Connection Successful.</p>";
 }
 //if theres an error when trying to connect
 catch(PDOException $e)
