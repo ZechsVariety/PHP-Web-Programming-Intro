@@ -13,22 +13,19 @@ $items = ["Home", "About", "Contact"];
 
 <!DOCTYPE html>
 <html>
-<head>
-    <title>My PHP Page</title>
-</head>
-<body>
+    <head>
+        <?php include "includes/header.php"?>
+    </head>
+    <body>
+        <h1>Welcome</h1>
 
-<h1>Welcome</h1>
+        <?php include "includes/navigation.php"?>
 
-<ul>
-<?php foreach ($items as $item): ?>
-    <li><?= $item ?></li>
-<?php endforeach; ?>
-</ul>
+        <footer>
+            <?php include "includes/footer.php"?>
+        </footer>
 
-<footer>
-    <p>&copy; 2026</p>
-</footer>
-
-</body>
+    </body>
 </html>
+
+<!-- I learned how a foreach statement works in php -->
