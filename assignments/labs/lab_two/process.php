@@ -46,6 +46,9 @@
         //stop the rest of the script from executing
         exit;
     }
+
+    //if no errors, email it
+    mail($email, "Confirmation message: Bake it 'Til You Make It", $message); //THIS DOESNT WORK
 ?>
 
 <main>
