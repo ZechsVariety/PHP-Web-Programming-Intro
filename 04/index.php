@@ -1,20 +1,21 @@
 <?php require "includes/header.php" ?>
 <main>
   <h2> Order Online - Easy & Simple (And Totally Secure...) 🧁</h2>
-  <form action="process.php" method="post">
+  <form action="process.php" method="get">
 
     <!-- Customer Information -->
+    <!-- step one: add client side validation with html attributes -->
     <fieldset>
       <legend>Customer Information</legend>
         <label for="first_name">First name</label>
-        <input type="text" id="first_name" name="first_name">
+        <input type="text" id="first_name" name="first_name" required="" minlength="2">
         <label for="last_name">Last name</label>
-        <input type="text" id="last_name" name="last_name">
+        <input type="text" id="last_name" name="last_name" required="">
         <label for="phone">Phone number</label>
         <input type="text" id="phone" name="phone" placeholder="555-123-4567">
         <label for="address">Address</label>
-        <input type="text" id="address" name="address">
-        <label for="email">Address</label>
+        <input type="text" id="address" name="address" placeholder="Jerma Street">
+        <label for="email">Email address</label>
         <input type="text" id="email" name="email">
     </fieldset>
 
