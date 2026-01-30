@@ -1,4 +1,16 @@
 <?php require "includes/header.php" ?>
+
+<!-- oops this was not what i was supposed to do... -->
+<style>
+  input:invalid {
+    border: 2px dashed red;
+  }
+
+  input:valid {
+    border: 2px solid black;
+  }
+</style>
+
 <main>
   <h2> Order Online - Easy & Simple (And Totally Secure...) 🧁</h2>
   <form action="process.php" method="get">
@@ -8,15 +20,15 @@
     <fieldset>
       <legend>Customer Information</legend>
         <label for="first_name">First name</label>
-        <input type="text" id="first_name" name="first_name" required="" minlength="2">
+        <input type="text" id="first_name" name="first_name" required minlength="2">
         <label for="last_name">Last name</label>
-        <input type="text" id="last_name" name="last_name" required="">
+        <input type="text" id="last_name" name="last_name" required>
         <label for="phone">Phone number</label>
         <input type="text" id="phone" name="phone" placeholder="555-123-4567">
         <label for="address">Address</label>
-        <input type="text" id="address" name="address" placeholder="Jerma Street">
+        <input type="text" id="address" name="address" placeholder="Jerma Street" required>
         <label for="email">Email address</label>
-        <input type="text" id="email" name="email">
+        <input type="text" id="email" name="email" required>
     </fieldset>
 
     <!-- Order Details -->
