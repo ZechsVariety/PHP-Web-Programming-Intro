@@ -68,6 +68,25 @@ if (!empty($errors)) {
 
 /*4*/
 
+// build query using placeholder variables to avoid tampering/data stealing stuff
+$sql = "INSERT INTO orders (first_name, last_name, phone, address, email, comments) VALUES (:first_name, :last_name, :phone, :address, :email, :comments)";
+
+// prepare the query (pdo comes from connect.php. stmt stands for statement)
+$stmt = $pdo->prepare($sql);
+
+// map the placeholder variables to the form data
+$stmt->bindParam(":first_name", $firstName);
+$stmt->bindParam(":last_name", $lastName);
+$stmt->bindParam(":phone", $phone);
+$stmt->bindParam(":address", $address);
+$stmt->bindParam(":email", $email);
+$stmt->bindParam(":comments", $comments);
+
+//execute query
+$stmt->execute();
+
+//close connection (not required but its cool)
+$pdo = null;
 
 ?>
 <? require "includes/header.php"; ?> 
