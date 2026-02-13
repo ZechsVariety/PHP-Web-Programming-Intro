@@ -105,12 +105,14 @@ if (!empty($errors)) {
 }
 
 // --------------------------------------------------
-// 4. Prepare SQL
+// 4. Setup Query and Prepare SQL
 // --------------------------------------------------
 // NOTE: We insert ALL item columns every time.
 // If an item was not ordered, we store 0 for that column.
 
+$sql = "INSERT INTO orders1 (first_name, last_name, phone, address, email, chaos_croissant, existential_eclair, procrastination_cookie, comments) VALUES (:first_name, :last_name, :phone, :address, :email, :chaos_croissant, :existential_eclair, :procrastination_cookie, :comments)";
 
+$stmt = $pdo->prepare($sql);
 
 // --------------------------------------------------
 // 5. Bind parameters
@@ -127,6 +129,7 @@ if (!empty($errors)) {
 
 // Build “clean” values for each DB column using defaults.
 // We pull from $itemsOrdered so only validated quantities get used.
+//DEFAULTS
 $chaosCroissant = $itemsOrdered['chaos_croissant'] ?? 0; 
 $existentialEclair     = $itemsOrdered['existential_eclair'] ?? 0;
 $procrastinationCookie = $itemsOrdered['procrastination_cookie'] ?? 0;
@@ -141,7 +144,7 @@ $stmt->bindParam(':comments', $comments);
 
 // order items
 // We bind as integers so the DB receives numeric values (0, 1, 2, ...).
-$stmt->bindParam(':chaos_croissant', $chaosCroissant, PDO::PARAM_INT);
+$stmt->bindParam(':chaos_croissant', $chaosCroissant, PDO::PARAM_INT); //PDO::PARAM_INT ensures its an integer
 $stmt->bindParam(':existential_eclair', $existentialEclair, PDO::PARAM_INT);
 $stmt->bindParam(':procrastination_cookie', $procrastinationCookie, PDO::PARAM_INT);
 
@@ -149,7 +152,9 @@ $stmt->bindParam(':procrastination_cookie', $procrastinationCookie, PDO::PARAM_I
 // --------------------------------------------------
 // 6. Execute
 // --------------------------------------------------
+$stmt->execute();
 
+$pdo = null;
 
 // --------------------------------------------------
 // 7. Confirmation output
