@@ -11,7 +11,17 @@ require "includes/connect.php";
   5. Fetch all results into $subscribers
 */
 
-$subscribers = []; // placeholder
+//1, 2
+$sql = "SELECT * FROM subscribers ORDER BY subscribed_at DESC";
+
+//3
+$stmt = $pdo->prepare($sql);
+
+//4
+$stmt->execute();
+
+//5
+$subscribers = $stmt->fetchAll();
 ?>
 
 <main class="container mt-4">
@@ -32,6 +42,12 @@ $subscribers = []; // placeholder
       </thead>
       <tbody>
         <!-- TODO: Loop through $subscribers and output each row -->
+         <?php
+            foreach($subscribers as $sub => $quantity) //=> $quanitity is for associative arrays like this because each value isn't indexed by a number but by a name instead
+            {
+              echo("<p>" . $subscribers[$sub][0] . " | " . $subscribers[$sub][1] . " | " . $subscribers[$sub][2] . " | " . $subscribers[$sub][3] . " | " . $subscribers[$sub][4] . "</p>");
+            }
+         ?>
       </tbody>
     </table>
   <?php endif; ?>
@@ -41,4 +57,4 @@ $subscribers = []; // placeholder
   </p>
 </main>
 
-<?php require "includes/footer.php"; ?>
+<?php //require "includes/footer.php"; ?>

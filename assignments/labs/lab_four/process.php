@@ -17,7 +17,7 @@ $email     = $_POST['email'];
 */
 
 //1
-$sql = "INSERT INTO subscribers(first_name, last_name, email) VALUES (:first_name, last_name, email)";
+$sql = "INSERT INTO subscribers(first_name, last_name, email) VALUES (:first_name, :last_name, :email)";
 
 //2
 $stmt = $pdo->prepare($sql);
@@ -26,6 +26,8 @@ $stmt = $pdo->prepare($sql);
 $stmt->bindParam(':first_name', $firstName);
 $stmt->bindParam(':last_name', $lastName);
 $stmt->bindParam(':email', $email);
+
+$stmt->execute();
 
 ?>
 <!DOCTYPE html>
