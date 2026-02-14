@@ -7,18 +7,17 @@
     </head>
 
     <body>
-        <header>
-            <h1>Awesome Blog</h1>
-            <h3>Create a Post</h3>
-        </header>
-
+        <?php require "includes/header.php"; ?>
+    
         <main>
+            <h3>Create a Post</h3>
+
             <form action="process.php" method="post">
                 <label for="title">Post Title</label>
                 <input type="text" id="title" name="title" maxlength="100">
 
                 <label for="content">Content</label>
-                <textarea id="content" name="content" maxlength="255" placeholder="Enter Text Here..."></textarea>
+                <textarea id="content" name="content" maxlength="1000" placeholder="Enter Text Here..."></textarea>
 
                 <label for="mainTag">Main Tag</label>
                 <input type="text" id="mainTag" name="mainTag" maxlength="100" placeholder="Ex: #art">

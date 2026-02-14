@@ -3,7 +3,7 @@ CREATE TABLE posts (
 
   -- form data
   title     VARCHAR(100),
-  content   VARCHAR(255),
+  content   VARCHAR(1000),
   mainTag   VARCHAR(100),
 
   -- auto generated

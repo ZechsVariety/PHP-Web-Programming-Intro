@@ -1,4 +1,5 @@
 <?php
+    require "includes/header.php";
     require "includes/connect.php";
 
     // parse values from form
@@ -73,7 +74,7 @@
             <h2>Posted.</h2>
 
             <?php
-                echo "<h3>Your post, <em>" . $title . "</em>, has been posted to <em>" . $mainTag . "</em>!</h3>";
+                echo "<h3>Your post \"<em>" . $title . "</em>\" has been posted to <em>" . $mainTag . "</em>!</h3>";
             ?>
 
             <p>
