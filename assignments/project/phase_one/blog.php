@@ -26,12 +26,15 @@
     else:
       foreach($posts as $post => $quantity) //=> $quanitity is for associative arrays like this because each value isn't indexed by a number but by a name instead
       {
-        echo("
+        echo
+        ("
           <div>
             <h3>" . $posts[$post][1] . "</h3>
             <p><small>Posted to " . $posts[$post][3] . " | " . $posts[$post][4] . "</small></p>
             <p>" . $posts[$post][2] . "</p>
-          </div>");
+            <a href=\"edit.php?id=" . $posts[$post][0] . "\">Edit</a>
+          </div>"
+        );
       }
     endif;
   ?>
