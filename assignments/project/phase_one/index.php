@@ -27,7 +27,7 @@
             </form>
 
             <p>
-                <a href="subscribers.php">View Blog Posts</a>
+                <a href="blog.php">View Blog Posts</a>
             </p>
         </main>
     </body>

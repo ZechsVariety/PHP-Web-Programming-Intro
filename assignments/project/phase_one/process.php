@@ -1,0 +1,48 @@
+<?php
+    require "includes/connect.php";
+
+    // parse values from form (no validation yet)
+    $title   = $_POST['title'];
+    $content = $_POST['content'];
+    $mainTag = $_POST['mainTag'];
+    
+    // build query using placeholder variables to avoid tampering/data stealing stuff
+    $sql = "INSERT INTO posts(title, content, mainTag) VALUES (:title, :content, :mainTag)";
+
+    // prepare the query (pdo comes from connect.php. stmt stands for statement)
+    $stmt = $pdo->prepare($sql);
+
+    // map the placeholder variables to the form data
+    $stmt->bindParam(':title',   $title);
+    $stmt->bindParam(':content', $content);
+    $stmt->bindParam(':mainTag', $mainTag);
+
+    //execute query
+    $stmt->execute();
+
+    //close connection (not required but its cool)
+    $pdo = null;
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Awesome Blog - Post Submission</title>
+    </head>
+
+    <body>
+        <main>
+            <h2>Posted.</h2>
+
+            <?php
+                echo "<h3>Your post, <em>" . $title . "</em>, has been posted to <em>" . $mainTag . "</em>!</h3>";
+            ?>
+
+            <p>
+                <a href="blog.php">View Blog Posts</a>
+            </p>
+        </main>
+    </body>
+</html>
