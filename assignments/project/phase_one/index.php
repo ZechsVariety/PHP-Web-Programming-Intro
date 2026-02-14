@@ -14,11 +14,11 @@
 
         <main>
             <form action="process.php" method="post">
-                <label for="postTitle">Post Title</label>
-                <input type="text" id="postTitle" name="postTitle">
+                <label for="title">Post Title</label>
+                <input type="text" id="title" name="title">
 
-                <label for="postContent">Content</label>
-                <textarea id="postContent" name="postContent" placeholder="Enter Text Here..."></textarea>
+                <label for="content">Content</label>
+                <textarea id="content" name="content" placeholder="Enter Text Here..."></textarea>
 
                 <label for="mainTag">Main Tag</label>
                 <input type="text" id="mainTag" name="mainTag" placeholder="Ex: #art">
