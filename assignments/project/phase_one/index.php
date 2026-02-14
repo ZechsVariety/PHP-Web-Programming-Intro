@@ -15,13 +15,13 @@
         <main>
             <form action="process.php" method="post">
                 <label for="title">Post Title</label>
-                <input type="text" id="title" name="title">
+                <input type="text" id="title" name="title" maxlength="100">
 
                 <label for="content">Content</label>
-                <textarea id="content" name="content" placeholder="Enter Text Here..."></textarea>
+                <textarea id="content" name="content" maxlength="255" placeholder="Enter Text Here..."></textarea>
 
                 <label for="mainTag">Main Tag</label>
-                <input type="text" id="mainTag" name="mainTag" placeholder="Ex: #art">
+                <input type="text" id="mainTag" name="mainTag" maxlength="100" placeholder="Ex: #art">
 
                 <button type="submit">Post</button>
             </form>
