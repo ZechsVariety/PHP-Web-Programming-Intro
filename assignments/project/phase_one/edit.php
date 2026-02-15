@@ -58,24 +58,38 @@
   }
 ?>
 
-<main>
-  <h3>Update Post #<?= $post['id']; ?></h3>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Awesome Blog - Edit Post</title>
 
-  <form method="post">
-    <!-- each field is autofilled using the value property -->
+      <!-- bootstrap css -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
 
-    <label for="title">Post Title</label>
-    <input type="text" id="title" name="title" maxlength="100" required value="<?= $post['title']; ?>">
+  <body>
+    <main>
+      <h3>Update Post #<?= $post['id']; ?></h3>
 
-    <label for="content">Content</label>
-    <textarea id="content" name="content" maxlength="1000" required placeholder="Enter Text Here..."><?= $post['content']; ?></textarea>
+      <form method="post">
+        <!-- each field is autofilled using the value property -->
 
-    <label for="mainTag">Main Tag</label>
-    <input type="text" id="mainTag" name="mainTag" maxlength="100" required placeholder="Ex: #art" value="<?= $post['mainTag']; ?>">
+        <label for="title">Post Title</label>
+        <input type="text" id="title" name="title" maxlength="100" required value="<?= $post['title']; ?>">
 
-    <button type="submit">Save Changes</button>
-    <a href="blog.php">Cancel</a> <!--cannot be button cause then it would submit-->
-  </form>
+        <label for="content">Content</label>
+        <textarea id="content" name="content" maxlength="1000" required placeholder="Enter Text Here..."><?= $post['content']; ?></textarea>
 
-  <a href="index.php">Create a New Post</a>
-</main>
+        <label for="mainTag">Main Tag</label>
+        <input type="text" id="mainTag" name="mainTag" maxlength="100" required placeholder="Ex: #art" value="<?= $post['mainTag']; ?>">
+
+        <button type="submit">Save Changes</button>
+        <a href="blog.php">Cancel</a> <!--cannot be button cause then it would submit-->
+      </form>
+
+      <a href="index.php">Create a New Post</a>
+    </main>
+  </body>
+</html>
