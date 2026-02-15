@@ -58,7 +58,7 @@
                   <p><small>Posted to " . $posts[$post][3] . " | " . $posts[$post][4] . "</small></p>
                   <p>" . $posts[$post][2] . "</p>
                   <a href='edit.php?id=" . $posts[$post][0] . "' role='button' class='btn btn-primary m-1'>Edit</a>
-                  <a href='delete.php?id=" . $posts[$post][0] . "' role='button' class='btn btn-danger m-1' onclick='return confirm('Are you sure you want to delete " . $posts[$post][1] . "?');'>Delete</a>
+                  <a href='delete.php?id=" . $posts[$post][0] . "' role='button' class='btn btn-danger m-1' onclick=\"return confirm('Are you sure you want to delete " . $posts[$post][1] . "?');\">Delete</a>
                 </div>
               ");
             }
