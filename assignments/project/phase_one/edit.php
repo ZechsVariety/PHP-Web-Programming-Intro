@@ -70,26 +70,34 @@
   </head>
 
   <body>
-    <main>
-      <h3>Update Post #<?= $post['id']; ?></h3>
+    <main class="container">
+      <div class="container border mb-3">
+        <h3 class="m-3">Update Post #<?= $post['id']; ?></h3>
 
-      <form method="post">
-        <!-- each field is autofilled using the value property -->
+        <form method="post">
+          <!-- each field is autofilled using the value property -->
 
-        <label for="title">Post Title</label>
-        <input type="text" id="title" name="title" maxlength="100" required value="<?= $post['title']; ?>">
+          <div class="input-group mb-3">
+            <label for="title" class="input-group-text">Post Title</label>
+            <input type="text" id="title" name="title" maxlength="100" required value="<?= $post['title']; ?>" class="form-control">
+          </div>
 
-        <label for="content">Content</label>
-        <textarea id="content" name="content" maxlength="1000" required placeholder="Enter Text Here..."><?= $post['content']; ?></textarea>
+          <div class="input-group mb-3">
+            <label for="content" class="input-group-text">Content</label>
+            <textarea id="content" name="content" maxlength="1000" required placeholder="Enter Text Here..." class="form-control"><?= $post['content']; ?></textarea>
+          </div>
 
-        <label for="mainTag">Main Tag</label>
-        <input type="text" id="mainTag" name="mainTag" maxlength="100" required placeholder="Ex: #art" value="<?= $post['mainTag']; ?>">
+          <div class="input-group mb-3">
+            <label for="mainTag" class="input-group-text">Main Tag</label>
+            <input type="text" id="mainTag" name="mainTag" maxlength="100" required placeholder="Ex: #art" value="<?= $post['mainTag']; ?>" class="form-control">
+          </div>
 
-        <button type="submit">Save Changes</button>
-        <a href="blog.php">Cancel</a> <!--cannot be button cause then it would submit-->
-      </form>
+          <button type="submit" class="btn btn-primary mb-3">Save Changes</button>
+          <a href="blog.php" role="button" class="btn btn-secondary mb-3">Cancel</a> <!--cannot be button cause then it would submit-->
+        </form>
+      </div>
 
-      <a href="index.php">Create a New Post</a>
+      <a href="index.php" role="button" class="btn btn-secondary btn-sm mb-3">Create a New Post</a>
     </main>
   </body>
 </html>
