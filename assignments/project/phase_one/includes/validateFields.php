@@ -12,16 +12,22 @@
     //title
     if($title == null || $title == "") //blank
         $errors[] = "Title cannot be blank.";
-
+    else if(strlen($title) > 100) //max character count
+        $errors[] = "Title cannot be longer than 100 characters.";
+    
     //content
     if($content == null || $content == "") //blank
         $errors[] = "Content cannot be blank.";
+    else if(strlen($content) > 1000) //max character count
+        $errors[] = "Content cannot be longer than 1000 characters.";
 
     //mainTag
     if($mainTag == null || $mainTag == "") //blank
         $errors[] = "Main Tag cannot be blank.";
     else if(str_contains($mainTag, " ")) //contains spaces (thanks to Don't Panic for the solution to finding if a string has any spaces: https://stackoverflow.com/questions/37142882/php-check-if-string-contains-space-between-words-not-at-beginning-or-end)
         $errors[] = "Main Tag cannot include spaces.";
+    else if(strlen($mainTag) > 100) //max character count
+        $errors[] = "Main tag cannot be longer than 100 characters.";
     else if($mainTag[0] != "#") //if it doesn't start with a hashtag, add it automatically
         $mainTag = "#" . $mainTag;
 

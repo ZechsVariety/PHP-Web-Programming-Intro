@@ -36,7 +36,7 @@
     //close connection (not required but its cool)
     $pdo = null;
 
-    // redirect back to the block posts page (prevents unintentional form resubmission)
+    // redirect back to the blog posts page (prevents unintentional form resubmission)
     header("Location: blog.php");
     exit;
   }
