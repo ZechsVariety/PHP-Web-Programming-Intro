@@ -12,33 +12,38 @@
     <body>
         <?php require "includes/header.php"; ?>
     
-        <!-- 5 padding -->
         <main class="container">
             <div class="container border mb-3">
                 <h3 class="m-3">Create a Post</h3>
 
+                <!-- form -->
                 <form action="process.php" method="post">
                     <!-- mb is margin bottom -->
+                    <!-- post title -->
                     <div class="input-group mb-3">
                         <label for="title" class="input-group-text">Post Title</label>
                         <input type="text" id="title" name="title" maxlength="100" required class="form-control">
                     </div>
 
+                    <!-- post content -->
                     <div class="input-group mb-3">
                         <label for="content" class="input-group-text">Content</label>
                         <textarea id="content" name="content" maxlength="1000" required placeholder="Enter Text Here..." class="form-control"></textarea>
                     </div>
 
+                    <!-- post main tag -->
                     <div class="input-group mb-3">
                         <label for="mainTag" class="input-group-text">Main Tag</label>
                         <input type="text" id="mainTag" name="mainTag" maxlength="100" required placeholder="Ex: #art" class="form-control">
                     </div>
 
+                    <!-- submit button -->
                     <button type="submit" class="btn btn-primary mb-3">Post</button>
                 </form>
             </div>
 
             <p>
+                <!-- to blog button -->
                 <!-- bootstrap documentation says to give a's that act as buttons "role="button"" for the sake of screenreaders and stuff https://getbootstrap.com/docs/5.3/components/buttons/#button-tags -->
                 <a href="blog.php" role="button" class="btn btn-secondary btn-sm mb-3">View Blog Posts</a>
             </p>

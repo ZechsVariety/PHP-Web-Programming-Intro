@@ -13,6 +13,8 @@
   {
     //parse and validate all fields
     require "includes/validateFields.php";
+
+    //below only runs if there were no validation errors
     
     // build query using placeholder variables to avoid tampering/data stealing stuff
     $sql = "UPDATE posts
@@ -53,6 +55,7 @@
   //fetch the entry's data and put it in the $post array
   $post = $stmt->fetch();
 
+  //if nothing was fetched, die
   if (!$post) {
     die("Post not found.");
   }
@@ -77,26 +80,32 @@
         <form method="post">
           <!-- each field is autofilled using the value property -->
 
+          <!-- post title -->
           <div class="input-group mb-3">
             <label for="title" class="input-group-text">Post Title</label>
             <input type="text" id="title" name="title" maxlength="100" required value="<?= $post['title']; ?>" class="form-control">
           </div>
 
+          <!-- post content -->
           <div class="input-group mb-3">
             <label for="content" class="input-group-text">Content</label>
             <textarea id="content" name="content" maxlength="1000" required placeholder="Enter Text Here..." class="form-control"><?= $post['content']; ?></textarea>
           </div>
 
+          <!-- post main tag -->
           <div class="input-group mb-3">
             <label for="mainTag" class="input-group-text">Main Tag</label>
             <input type="text" id="mainTag" name="mainTag" maxlength="100" required placeholder="Ex: #art" value="<?= $post['mainTag']; ?>" class="form-control">
           </div>
 
+          <!-- submit button -->
           <button type="submit" class="btn btn-primary mb-3">Save Changes</button>
+          <!-- cancel button -->
           <a href="blog.php" role="button" class="btn btn-secondary mb-3">Cancel</a> <!--cannot be button cause then it would submit-->
         </form>
       </div>
 
+      <!-- create new post button -->
       <a href="index.php" role="button" class="btn btn-info btn-sm mb-3">Create a New Post</a>
     </main>
   </body>

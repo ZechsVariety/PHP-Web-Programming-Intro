@@ -5,6 +5,8 @@
     //parse and validate all fields
     require "includes/validateFields.php";
 
+    //below only runs if there were no validation errors
+
     //to database
     
     // build query using placeholder variables to avoid tampering/data stealing stuff

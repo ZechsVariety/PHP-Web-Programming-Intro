@@ -30,6 +30,7 @@
 
   <body>
     <main style="text-align: center;">
+      <!-- create new post button -->
       <p>
         <a href="index.php" role="button" class="btn btn-info btn-sm m-3">Create a New Post</a>
       </p>
@@ -37,10 +38,12 @@
       <div class="container bg-primary-subtle p-3">
         <h2 style="text-align: center;">Posts</h2>
 
+        <!-- all posts -->
         <?php
           if (count($posts) == 0):
             echo "<p>No posts yet.</p>";
           else:
+            //each post
             foreach($posts as $post => $quantity) //=> $quanitity is for associative arrays like this because each value isn't indexed by a number but by a name instead
             {
               /*
@@ -54,11 +57,11 @@
               echo
               ("
                 <div class='container border mb-3 p-3 bg-body' style='text-align: center; width: 50%;'>
-                  <h3>" . $posts[$post][1] . "</h3>
-                  <p><small>Posted to " . $posts[$post][3] . " | " . $posts[$post][4] . "</small></p>
-                  <p>" . $posts[$post][2] . "</p>
-                  <a href='edit.php?id=" . $posts[$post][0] . "' role='button' class='btn btn-primary m-1'>Edit</a>
-                  <a href='delete.php?id=" . $posts[$post][0] . "' role='button' class='btn btn-danger m-1' onclick=\"return confirm('Are you sure you want to delete " . $posts[$post][1] . "?');\">Delete</a>
+                  <h3>" . $posts[$post]['title'] . "</h3>
+                  <p><small>Posted to " . $posts[$post]['mainTag'] . " | " . $posts[$post]['postTime'] . "</small></p>
+                  <p>" . $posts[$post]['content'] . "</p>
+                  <a href='edit.php?id=" . $posts[$post]['id'] . "' role='button' class='btn btn-primary m-1'>Edit</a>
+                  <a href='delete.php?id=" . $posts[$post]['id'] . "' role='button' class='btn btn-danger m-1' onclick=\"return confirm('Are you sure you want to delete " . $posts[$post]['title'] . "?');\">Delete</a>
                 </div>
               ");
             }

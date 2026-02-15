@@ -20,5 +20,5 @@
   //execute query
   $stmt->execute();
 
-  // refresh the page
+  // go back to blog.php (appears as if the page refreshed)
   header("Location: blog.php");
