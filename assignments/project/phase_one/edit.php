@@ -97,7 +97,7 @@
         </form>
       </div>
 
-      <a href="index.php" role="button" class="btn btn-secondary btn-sm mb-3">Create a New Post</a>
+      <a href="index.php" role="button" class="btn btn-info btn-sm mb-3">Create a New Post</a>
     </main>
   </body>
 </html>
