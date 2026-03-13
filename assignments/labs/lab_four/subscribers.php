@@ -43,7 +43,7 @@ $subscribers = $stmt->fetchAll();
       <tbody>
         <!-- TODO: Loop through $subscribers and output each row -->
          <?php
-            foreach($subscribers as $sub => $quantity) //=> $quanitity is for associative arrays like this because each value isn't indexed by a number but by a name instead
+            foreach($subscribers as $sub => $quantity) //=> $quanitity is for associative arrays like this because each value isn't indexed by a number but by a name instead (NO THIS IS WRONG it works for both indexed and associateive arrays according to teach (i still dont know what any of this means))
             {
               echo("<p>" . $subscribers[$sub][0] . " | " . $subscribers[$sub][1] . " | " . $subscribers[$sub][2] . " | " . $subscribers[$sub][3] . " | " . $subscribers[$sub][4] . "</p>");
             }
